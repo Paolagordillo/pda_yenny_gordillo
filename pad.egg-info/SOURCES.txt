@@ -1,5 +1,4 @@
 README.md
-actividad_1.py
 setup.py
 pad.egg-info/PKG-INFO
 pad.egg-info/SOURCES.txt
