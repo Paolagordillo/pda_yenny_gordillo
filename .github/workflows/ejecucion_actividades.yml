@@ -18,7 +18,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9.2'
+          python-version: '3.12.1'
       - name: paso1 - crea entorno virtual
         run: python -m venv venv
       - name: paso2 - activar entorno virtual
