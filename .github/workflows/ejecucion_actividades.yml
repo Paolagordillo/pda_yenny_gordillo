@@ -29,6 +29,8 @@ jobs:
         run: pip install -e .
       - name: Verificar archivos en el runner
         run: ls -R src/pad
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
       - name: paso5 - Ejecutar script
         run: python /src/pad/actividad_1.py
 
