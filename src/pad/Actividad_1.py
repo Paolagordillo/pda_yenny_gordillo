@@ -24,5 +24,7 @@ class Ingestiones():
 
 Ingestion = Ingestiones()
 datos_json = Ingestion.leer_api("https://api.thecatapi.com/v1/images/search?limit=10")
-print("esta es la ruta estatica:",Ingestion.ruta_static)
+#print("esta es la ruta estatica:",Ingestion.ruta_static)
 print("datos json:",datos_json)
+
+#Ingestion.escribir_json(nombre="archivo_json",datos=datos_json)
