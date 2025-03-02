@@ -27,6 +27,8 @@ jobs:
         run: pip install --upgrade pip
       - name: paso4 - instalar dependencias
         run: pip install -e .
+      - name: Verificar archivos en el runner
+        run: ls -R src/pad
       - name: paso5 - Ejecutar script
         run: python /src/pad/actividad_1.py
 
