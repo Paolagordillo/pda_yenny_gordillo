@@ -2,36 +2,31 @@ import os
 import requests
 import json
 
-# 📌 URL de la API (reemplázala con la que necesites)
-API_URL = "https://jsonplaceholder.typicode.com/posts"
 
-# 📁 Carpeta donde se guardará la respuesta
-OUTPUT_FOLDER = "datos_api"
-OUTPUT_FILE = "respuesta.json"
 
-def obtener_datos_api(url):
-    """Hace una petición GET a la API y devuelve los datos en JSON."""
-    try:
-        response = requests.get("https://jsonplaceholder.typicode.com/posts")
-        response.raise_for_status()  # Lanza un error si hay un problema con la solicitud
-        return response.json()  # Retorna la respuesta en formato JSON
-    except requests.exceptions.RequestException as e:
-        print(f"Error al obtener los datos: {e}")
-        return None
+class Actividad_1:
+    def __init__(self):
+        self.ruta_json = "src/pad/static/json"
 
-def guardar_datos(datos, carpeta, archivo):
-    """Guarda los datos en un archivo dentro de una carpeta."""
-    if datos:
-        os.makedirs(carpeta, exist_ok=True)  # Crea la carpeta si no existe
-        ruta_completa = os.path.join(carpeta, archivo)
+    def leer_api(self, url):
+        response = requests.get(url)
+        return response.json()
 
-        with open(ruta_completa, "w", encoding="utf-8") as f:
-            json.dump(datos, f, indent=4, ensure_ascii=False)
+    def escribir_json(self, ruta, data):
+        # Escribir datos JSON en un archivo
+        with open(ruta, 'w') as f:
+            json.dump(data, f, indent=4)
 
-        print(f"Datos guardados en: {ruta_completa}")
-    else:
-        print("No hay datos para guardar.")
+# Crear una instancia de la clase
+ingestion = Actividad_1()
 
-if __name__ == "__main__":
-    datos = obtener_datos_api(API_URL)  # Obtener datos de la API
-    guardar_datos(datos, OUTPUT_FOLDER, OUTPUT_FILE)  # Guardar los datos
+# Leer datos de la API
+datos_json = ingestion.leer_api("https://api.thecatapi.com/v1/images/search?limit=10")
+
+# Mostrar los datos obtenidos
+print("Datos JSON:", datos_json)
+
+# Guardar los datos en un archivo JSON
+ruta_archivo = ingestion.ruta_json + "datos.json"  # Combinar ruta estática con el nombre del archivo
+ingestion.escribir_json(ruta_archivo, datos_json)
+print(f"Datos guardados en: {ruta_archivo}")

@@ -14,9 +14,9 @@ class Ingestiones():
      #   with open(ruta,'w') as f
       #  json.dump(data,f)
         
-    #def escribir_json(self,ruta,/workspaces/pda_yenny_gordillo/src/pad/static/json):
-     #   with open(ruta,'w') as f
-      #  json.dump(data,f)
+    def escribir_json(self,ruta,data ="datos.json"):
+        with open(self.ruta_static,'w') as f:
+        json.dump(data,f)
 
         
 
