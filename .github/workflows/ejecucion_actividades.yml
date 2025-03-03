@@ -27,6 +27,8 @@ jobs:
         run: pip install --upgrade pip
       - name: paso4 - instalar dependencias
         run: pip install -e .
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
       - name: Verificar archivos en el runner
         run: ls -R src/pad
       - name: Checkout del repositorio
