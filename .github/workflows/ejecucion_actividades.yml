@@ -27,18 +27,18 @@ jobs:
         run: pip install --upgrade pip
       - name: paso4 - instalar dependencias
         run: pip install -e .
-      - name: Instalar dependencias
-        run: pip install -r requirements.txt
+      #- name: Instalar dependencias
+       # run: pip install -r requirements.txt
       - name: Verificar archivos en el runner
         run: ls -R src/pad
       - name: Checkout del repositorio
         uses: actions/checkout@v4
-      - name: paso5 - Ejecutar script de la actividad 1
-        run: python -m src/pad/Actividad_1.py
-      - name: paso6 - Ejecutar script de la actividad 1
-        run: python workspaces/pda_yenny_gordillo/src/pad/prueba_A1.PY
-      - name: paso7 - Ejecutar script de la actividad 1
-        run: python workspaces/pda_yenny_gordillo/src/pad/prueba2_A1.py
+      #- name: paso5 - Ejecutar script de la actividad 1
+       # run: python -m src/pad/Actividad_1.py
+      - name: paso6 - Ejecutar script de la prueba 1
+        run: python src/pad/prueba_A1.PY
+      - name: paso7 - Ejecutar script de la prueba 2
+        run: python src/pad/prueba2_A1.py
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
