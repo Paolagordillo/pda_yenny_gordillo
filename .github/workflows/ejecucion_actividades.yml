@@ -33,6 +33,10 @@ jobs:
         uses: actions/checkout@v4
       - name: paso5 - Ejecutar script de la actividad 1
         run: python workspaces/pda_yenny_gordillo/src/pad/Actividad_1.py
+      - name: paso6 - Ejecutar script de la actividad 1
+        run: python workspaces/pda_yenny_gordillo/src/pad/prueba_A1.PY
+      - name: paso7 - Ejecutar script de la actividad 1
+        run: python workspaces/pda_yenny_gordillo/src/pad/prueba2_A1.py
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
