@@ -15,7 +15,9 @@ setup(
         "pandas",
         "numpy",
         "openpyxl",
-        "requests"
+        "requests",
+        "scipy"
+        
     ],
     
 )
